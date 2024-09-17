@@ -36,6 +36,7 @@ def get_keyword_rank_and_volume(keyword, domain, region='in'):
         # Extract search result URLs
         all_results = driver.find_elements(By.CSS_SELECTOR, '.yuRUbf a')
 
+
         filtered_urls = []
         
         for result in all_results:
@@ -51,7 +52,7 @@ def get_keyword_rank_and_volume(keyword, domain, region='in'):
                     filtered_urls.append(href)
 
         # Print the filtered URLs in green
-        # print(Fore.GREEN + "Filtered results:", Fore.GREEN + str(filtered_urls))
+        print(Fore.GREEN + "Filtered results:", Fore.GREEN + str(filtered_urls))
 
         # Normalize the domain for matching (ignore 'www')
         normalized_domain = domain.replace("www.", "")
@@ -78,11 +79,10 @@ def get_keyword_rank_and_volume(keyword, domain, region='in'):
         return None
 
 # Example usage
-keyword = 'denim jeans'
-domain = 'flipkart.com'
+keyword = 'games'
+domain = 'rockstargames.com'
 region = 'in'
 rank = get_keyword_rank_and_volume(keyword, domain, region)
-print(f"Rank in {region}: {rank}")
 
 
 
