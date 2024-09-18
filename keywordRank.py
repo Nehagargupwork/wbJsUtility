@@ -18,14 +18,6 @@ def get_keyword_rank_and_volume(keyword, domain, region='in'):
     chrome_options.add_argument('--disable-dev-shm-usage')
     chrome_options.add_argument('--disable-gpu')  # Optional, depending on environment
 
-    
-    # chrome_options.add_argument('--headless')  # Run Chrome in headless mode (no GUI)
-    # chrome_options.add_argument('--no-sandbox')
-    # chrome_options.add_argument('--disable-dev-shm-usage')
-    # chrome_options.add_argument('--disable-infobars')
-    # chrome_options.add_argument('--disable-extensions')
-    # chrome_options.add_argument('--window-size=1200,800')
-
 
     # Automatically download the correct version of ChromeDriver
     service = Service(ChromeDriverManager().install())
