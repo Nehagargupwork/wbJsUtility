@@ -21,7 +21,8 @@ def get_keyword_rank_and_volume(keyword, domain, region='in'):
     chrome_options.add_argument('--window-size=1200,800')
 
     # Automatically download the correct version of ChromeDriver
-    driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=chrome_options)
+    service = Service(ChromeDriverManager().install())
+    driver = webdriver.Chrome(service=service, options=chrome_options)
 
     # Construct the search URL
     search_url = f"https://www.google.com/search?q={keyword}&gl={region}&num=20"
