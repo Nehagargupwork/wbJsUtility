@@ -20,7 +20,7 @@ def get_keyword_rank_and_volume(keyword, domain, region='in'):
     chrome_options.add_argument('--window-size=1200,800')
 
     # Path to your chromedriver (download the correct version)
-    chrome_driver_path = "chromedriver.exe"
+    chrome_driver_path = "./chromedriver.exe"
 
     # Start the service
     service = Service(chrome_driver_path)
