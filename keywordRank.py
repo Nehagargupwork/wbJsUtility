@@ -80,7 +80,7 @@ def get_keyword_rank_and_volume(keyword, domain, region='in'):
 
 # Example usage
 keyword = 'games'
-domain = 'rockstargames.com'
+domain = 'olympics.com'
 region = 'in'
 rank = get_keyword_rank_and_volume(keyword, domain, region)
 
