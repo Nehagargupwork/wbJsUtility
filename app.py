@@ -4,6 +4,12 @@ from keywordRank import get_keyword_rank_and_volume
 
 app = Flask(__name__)
 
+
+# Route for the homepage
+@app.route('/')
+def home():
+    return "Hello, World!"
+
 @app.route('/rank', methods=['GET'])
 def rank():
     keyword = request.args.get('keyword')
