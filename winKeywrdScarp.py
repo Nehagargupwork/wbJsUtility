@@ -4,7 +4,6 @@ from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.common.by import By
 from selenium.common.exceptions import NoSuchElementException
-from webdriver_manager.chrome import ChromeDriverManager
 from colorama import init, Fore
 
 # Initialize colorama for colored output
@@ -20,8 +19,12 @@ def get_keyword_rank_and_volume(keyword, domain, region='in'):
     chrome_options.add_argument('--disable-extensions')
     chrome_options.add_argument('--window-size=1200,800')
 
-    # Automatically download the correct version of ChromeDriver
-    driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=chrome_options)
+    # Path to your chromedriver (download the correct version)
+    chrome_driver_path = "chromedriver.exe"
+
+    # Start the service
+    service = Service(chrome_driver_path)
+    driver = webdriver.Chrome(service=service, options=chrome_options)
 
     # Construct the search URL
     search_url = f"https://www.google.com/search?q={keyword}&gl={region}&num=20"
@@ -33,8 +36,9 @@ def get_keyword_rank_and_volume(keyword, domain, region='in'):
         # Extract search result URLs
         all_results = driver.find_elements(By.CSS_SELECTOR, '.yuRUbf a')
 
-        filtered_urls = []
 
+        filtered_urls = []
+        
         for result in all_results:
             # Check if the result is inside an element with class 'Wt5Tfe'
             try:
@@ -74,23 +78,11 @@ def get_keyword_rank_and_volume(keyword, domain, region='in'):
         driver.quit()
         return None
 
-
-
 # Example usage
 keyword = 'games'
 domain = 'olympics.com'
 region = 'in'
 rank = get_keyword_rank_and_volume(keyword, domain, region)
-
-
-
-
-
-
-
-
-
-
 
 
 
