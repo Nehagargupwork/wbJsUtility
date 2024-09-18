@@ -78,10 +78,10 @@ def get_keyword_rank_and_volume(keyword, domain, region='in'):
 
 
 # Example usage
-keyword = 'flask python'
-domain = 'geeksforgeeks.org'
-region = 'in'
-rank = get_keyword_rank_and_volume(keyword, domain, region)
+# keyword = 'flask python'
+# domain = 'geeksforgeeks.org'
+# region = 'in'
+# rank = get_keyword_rank_and_volume(keyword, domain, region)
 
 
 
